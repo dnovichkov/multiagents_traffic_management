@@ -102,5 +102,5 @@ class AgentsDispatcher:
         self.scene.current_time += time_step
         all_addresses = self.get_agents_addresses()
         for address in all_addresses:
-            next_time_message = Message(MessageType.NEW_TIME_MESSAGE, {'current_time': self.scene.current_time})
+            next_time_message = Message(MessageType.NEW_TIME_MESSAGE, {'time_step': time_step})
             self.actor_system.tell(address, next_time_message)

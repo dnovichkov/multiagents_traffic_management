@@ -26,8 +26,9 @@ if __name__ == "__main__":
         entity = CarEntity(car, scene)
         dispatcher.add_entity(entity)
 
-    scenario_duration = 600
+    scenario_duration = 60
     time_step = 10
     steps_count = scenario_duration // time_step
     for _ in range(steps_count):
         dispatcher.set_next_time_step(time_step)
+    scene.create_activity_log()

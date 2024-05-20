@@ -33,3 +33,16 @@ class ReferenceBook:
         :return:
         """
         self.agents_entities.clear()
+
+    def get_entity_name(self, agent_address):
+        """
+        Returns the name of the specified agent address.
+        :param agent_address:
+        :return:
+        """
+        if agent_address.addressDetails == 'System:ExternalRequester':
+            return "Scene"
+        for entity, agent in self.agents_entities.items():
+            if agent_address == agent:
+                return entity.name
+        return str(agent_address)

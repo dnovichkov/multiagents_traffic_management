@@ -64,6 +64,10 @@ class AgentBase(ABC, Actor):
                     logging.error(ex)
             else:
                 logging.warning('%s There is no handler for message: %s', self.name, message_type)
+            sender_name = self.dispatcher.reference_book.get_entity_name(sender)
+            self_name = self.name
+            ac_msg = (sender_name, self_name, message_type, msg.msg_body)
+            self.scene.add_msg(ac_msg)
         else:
             logging.error('%s Wrong message format: %s', self.name, msg)
             super().receiveMessage(msg, sender)

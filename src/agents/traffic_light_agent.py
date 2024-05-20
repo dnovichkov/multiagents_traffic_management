@@ -26,7 +26,7 @@ class TrafficLightAgent(AgentBase):
         :return:
         """
         data = message.msg_body
-        logging.info(f'{self} - received {message}, data - {data}')
+        logging.debug(f'{self} - received {message}, data - {data}')
 
     def handle_new_car(self, message, sender):
         """
@@ -37,3 +37,4 @@ class TrafficLightAgent(AgentBase):
         """
         data = message.msg_body
         logging.info(f'{self} - received {message}, data - {data}')
+        # TODO: Save cars here

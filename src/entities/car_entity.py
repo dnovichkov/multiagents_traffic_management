@@ -39,7 +39,9 @@ class CarEntity(BaseEntity):
         self.distance = init_dict_data.get('DistanceToPoint')
         self.appear_time = init_dict_data.get('AppearTime')
         self.length = init_dict_data.get('CarLength')
-        self.speed = init_dict_data.get('Speed')
+        speed_km_per_hour = init_dict_data.get('Speed')
+        # Speed in m/sec
+        self.speed = speed_km_per_hour * 1000 / 3600
         x1 = float(init_dict_data.get('x-coord'))
         y1 = float(init_dict_data.get('y-coord'))
         self.init_point = Point(x1, y1)

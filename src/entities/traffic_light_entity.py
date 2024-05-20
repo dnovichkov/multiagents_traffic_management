@@ -40,3 +40,13 @@ class TrafficLightEntity(BaseEntity):
         """
         result = []
         return result
+
+    def get_possible_point(self, possible_next_point: Point) -> Point:
+        """
+        Check if the car can move to the given location
+        :param possible_next_point:
+        :return:
+        """
+
+        # TODO: view all cars in current area and check the restrictions.
+        return possible_next_point
