@@ -6,6 +6,7 @@ from typing import Any
 class MessageType(Enum):
     INIT_MESSAGE = 'Initialization'
     NEW_TIME_MESSAGE = 'New time'
+    NEW_CAR_MESSAGE = 'New car'
 
 
 @dataclass

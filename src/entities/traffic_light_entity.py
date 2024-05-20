@@ -6,6 +6,7 @@ import typing
 from dataclasses import dataclass
 
 from src.entities.base_entity import BaseEntity
+from src.utils.point import Point
 
 
 class TrafficLightEntity(BaseEntity):
@@ -16,6 +17,10 @@ class TrafficLightEntity(BaseEntity):
         super().__init__(scene)
         self.name = init_dict_data.get('Name')
         self.number = init_dict_data.get('Id')
+        x1 = float(init_dict_data.get('x-coord'))
+        y1 = float(init_dict_data.get('y-coord'))
+        self.location = Point(x1, y1)
+        self.radius = init_dict_data.get('Radius')
 
         self.uri = 'TrafficLight' + str(self.number)
 

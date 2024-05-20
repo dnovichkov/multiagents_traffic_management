@@ -16,10 +16,21 @@ class TrafficLightAgent(AgentBase):
         self.entity: CarEntity
         self.name = 'Traffic Light'
         self.subscribe(MessageType.NEW_TIME_MESSAGE, self.handle_new_time)
+        self.subscribe(MessageType.NEW_CAR_MESSAGE, self.handle_new_car)
 
     def handle_new_time(self, message, sender):
         """
         Handle new time message
+        :param message:
+        :param sender:
+        :return:
+        """
+        data = message.msg_body
+        logging.info(f'{self} - received {message}, data - {data}')
+
+    def handle_new_car(self, message, sender):
+        """
+        Handle new car message
         :param message:
         :param sender:
         :return:

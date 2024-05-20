@@ -8,6 +8,7 @@ class Scene:
     """
     def __init__(self):
         self.entities = defaultdict(list)
+        self.current_time = 0
 
     def get_entities_by_type(self, entity_type) -> typing.List:
         """
